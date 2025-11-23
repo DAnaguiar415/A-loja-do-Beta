@@ -11,7 +11,7 @@
     scrollbar-color: #61dafb #021524;
 }
 
-/* Custom Scrollbar - Tema Aquático */
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -45,6 +45,100 @@ background: linear-gradient(to bottom, rgba(3, 11, 18, 0.0) 70%,  #021524 100%),
     max-width: 100vw;
     overflow: hidden;
     box-sizing: border-box;
+}
+
+
+.header .navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: rgba(2, 21, 36, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.header .navbar-brand {
+    text-decoration: none;
+}
+
+.header .navbar-brand h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.header .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem !important;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.header .nav-link:hover {
+    color: #61dafb !important;
+}
+
+.header .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #61dafb;
+    transition: width 0.3s ease;
+}
+
+.header .nav-link:hover::after {
+    width: 70%;
+}
+
+.header .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.header .icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.8rem !important;
+    margin-left: 0.5rem;
+    position: relative;
+}
+
+.header .icon-link::after {
+    display: none;
+}
+
+.header .icon-link svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header .icon-link:hover svg {
+    transform: scale(1.1);
+    color: #61dafb !important;
+}
+
+.header .cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #FF5733;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transform: translate(25%, -25%);
+    transition: transform 0.2s ease;
 }
 
 .page-header .navbar {
@@ -138,6 +232,20 @@ background: linear-gradient(to bottom, rgba(3, 11, 18, 0.0) 70%,  #021524 100%),
     font-weight: bold;
     transform: translate(25%, -25%);
     transition: transform 0.2s ease;
+}
+
+
+.page-header.no-hero {
+    background: none !important;
+    background-image: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+.page-header.no-hero .navbar {
+    
+    background: rgba(2, 21, 36, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .title{
@@ -302,12 +410,12 @@ html {
     overflow: hidden;
 }
 
-/* Permitir que o container se estenda além do main */
+
 main {
     overflow: visible;
 }
 
-/* Garantir que bolhas não apareçam no footer */
+
 footer ~ .bubbles-container,
 footer .bubbles-container,
 footer + * .bubbles-container {
@@ -350,7 +458,7 @@ footer + * .bubbles-container {
     padding: 80px 0;
 }
 
-/* Permitir bolhas na seção sobre-nos */
+
 #sobre-nos {
     position: relative;
     z-index: 10;
@@ -362,7 +470,7 @@ footer + * .bubbles-container {
     z-index: 11;
 }
 
-/* Garantir que footer não tenha bolhas */
+
 footer {
     overflow: hidden;
     position: relative;
@@ -488,6 +596,60 @@ footer * {
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
     position: relative;
     overflow: hidden;
+}
+
+
+.buy-btn {
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    font-weight: bold !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    position: relative;
+    overflow: hidden;
+    
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+.buy-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.buy-btn:hover::before {
+    left: 100%;
+}
+
+.buy-btn:hover {
+    background-color: #61dafb;
+    border-color: #61dafb !important;
+    color: #000 !important;
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.6);
+}
+
+
+.btn.btn-outline-light.buy-btn:hover,
+.btn.btn-outline-light.buy-btn:focus,
+.btn.btn-outline-light.buy-btn:active {
+    background-color: #61dafb !important;
+    border-color: #61dafb !important;
+    color: #000 !important;
+    transform: scale(1.08) !important;
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.6) !important;
+    outline: none !important;
+}
+
+
+.btn.btn-outline-light.buy-btn:focus {
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.45) !important;
 }
 
 #peixes .buy-btn::before {
@@ -722,7 +884,7 @@ footer > * {
     border-color: rgba(25, 135, 84, 0.4);
 }
 
-/* Desktop - badges na mesma linha, small em linha separada */
+
 @media (min-width: 1025px) {
     .fish-specs {
         flex-wrap: wrap;
@@ -740,7 +902,7 @@ footer > * {
     }
 }
 
-/* Footer gradient para telas até 1550px */
+
 @media (max-width: 1550px) {
     footer {
         background: linear-gradient(to bottom, #040f1a 0%, #002F5D 50%, #000000 53%);
@@ -748,20 +910,20 @@ footer > * {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    /* Ajustes para tablets como iPad Air */
+    
     body {
         overflow-x: hidden;
         max-width: 100vw;
     }
     
-    /* Hero Section Background - igual ao mobile */
+    
     .page-header {
         background-size: 120%;
         background: linear-gradient(to bottom, rgba(3, 11, 18, 0.0) 70%, #021524 100%), url(../images/cabecalho.png);
         background-position: 20% 70%;
     }
     
-    /* Hero Section - Grid Responsivo */
+    
     #call-to-action {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -820,7 +982,7 @@ footer > * {
     #peixes{
         padding-top: 30%;
     }
-    /* Peixes - 1 por linha no iPad Air */
+    
     #peixes .row > [class*="col-md-4"] {
         flex: 0 0 100%;
         max-width: 100%;
@@ -845,7 +1007,7 @@ footer > * {
         box-sizing: border-box;
     }
     
-    /* Footer adjustments for iPad */
+    
     footer {
         overflow-x: hidden;
         max-width: 100vw;
@@ -888,7 +1050,7 @@ footer > * {
         max-width: 100%;
     }
     
-    /* Fish specs - permitir quebra em tablets */
+    
     .fish-specs {
         flex-wrap: wrap;
         overflow-x: visible;
@@ -896,12 +1058,12 @@ footer > * {
 }
 
 @media (max-width: 768px) {
-    /* Hero Section Background - Zoom */
+    
     .page-header {
         background: linear-gradient(to bottom, rgba(3, 11, 18, 0.0) 70%, #021524 100%), url(../images/cabecalho.png);
     }
     
-    /* Hero Section - Grid Responsivo Mobile */
+    
     #call-to-action {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -952,9 +1114,9 @@ footer > * {
         padding: 10px 40px;
     }
     
-    /* Sobre Nós Section */
+    
     .sobre-nos-content {
-        flex-direction: column;
+        flex-direction: column; 
         gap: 2rem;
     }
     
@@ -972,7 +1134,7 @@ footer > * {
         text-align: justify;
     }
     
-    /* Peixes Section */
+    
     #peixes {
         padding: 40px 0;
     }
@@ -1006,7 +1168,7 @@ footer > * {
         width: 100%;
     }
     
-    /* Footer */
+    
     .footer-content {
         flex-direction: column;
         padding: 40px 20px;
@@ -1031,7 +1193,7 @@ footer > * {
         padding: 5px 8px;
     }
     
-    /* Bolhas - reduzir tamanho no mobile */
+    
     .bubble {
         max-width: 60px;
         max-height: 60px;
@@ -1039,7 +1201,7 @@ footer > * {
 }
 
 @media (max-width: 480px) {
-    /* Hero Section Background - Zoom ainda maior */
+    
     .page-header {
         background-size: 180%;
         background: linear-gradient(to bottom, rgba(3, 11, 18, 0.0) 70%, #021524 100%), url(../images/cabecalho.png);
@@ -1048,7 +1210,7 @@ footer > * {
         min-height: 600px;
     }
     
-    /* Ajustes extras para telas muito pequenas */
+    
     #call-to-action {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -1109,15 +1271,15 @@ footer > * {
 }
 
 body {
-    margin: 0; 
+    margin: 0;
     font-family: sans-serif;
-   
+
     background-image: linear-gradient(rgb(0, 0, 0), rgb(5, 2, 92));
-    min-height: 200vh;
+    
+    min-height: 100vh;
 }
 
 .header {
-    height: 10vh; 
     color: white; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -1126,15 +1288,29 @@ body {
     list-style: none; 
     padding: 0;
     
-    display: flex; 
-    gap: 25px; 
+    display: flex;
+    gap: 25px;
 }
 
 .header nav a {
     color: white;
-    text-decoration: none;
+    text-decoration: none;  
     font-size: 1.1em;
     font-weight: bold;
+}
+
+
+.header .navbar-nav {
+    
+    gap: 0 !important;
+    align-items: center;
+}
+.header .navbar-nav .nav-item{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.header .navbar-nav .nav-link{
+    padding: 0.5rem 1.2rem !important;
 }
 
 .fundo-texto {
@@ -1155,7 +1331,8 @@ body {
 }
 
 .fundo-form{
-    height: 100vh;
+    
+    min-height: calc(100vh - 80px);
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -1200,19 +1377,208 @@ body {
 }
 
 .peixe1{
-    width: 45%;
+    width: 38%;
+    max-width: 420px;
     top: -5%;
     right: 5%;
     position: absolute;
-    z-index: 1;         
-    opacity: 50%;
+    z-index: 1;
+    
+    opacity: 0.25;
+    pointer-events: none;
 }
 
 .peixe2{
     width: 30%;
-    bottom: 0%;
-    left: 15%;
-    position: absolute; 
-    z-index: 1;     
-    opacity: 50%;
+    max-width: 320px;
+    
+    bottom: 12%;
+    left: 12%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+
+@media (max-width: 768px) {
+    .peixe1 {
+        width: 48%;
+        max-width: none;
+        
+        top: -2%;
+        right: 2%;
+        opacity: 0.4;
+    }
+    .peixe2 {
+        width: 36%;
+        left: 6%;
+        
+        bottom: 4%;
+        opacity: 0.4;
+    }
+
+    
+    .peixe1,
+    .peixe2 {
+        display: none !important;
+    }
+}
+
+
+.contato-page {
+     
+     min-height: 100vh;
+     overflow: visible; 
+     
+     scrollbar-gutter: stable;
+}
+
+
+.contato-page main {
+    height: calc(100vh - 80px);
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+@media (max-width: 480px) {
+    .intro-contato {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    .contato-container {
+        padding: 1rem !important;
+    }
+    .contato-card {
+        padding: 0.9rem !important;
+        gap: 0.75rem !important;
+    }
+    .contato-text h3 {
+        font-size: 1.4rem !important;
+    }
+    .contato-form .form-control {
+        padding: 0.5rem 0.6rem !important;
+    }
+    .contato-form .text-end {
+        text-align: center !important;
+    }
+    .btn-custom {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .contato-card {
+        padding: 0.6rem !important;
+    }
+}
+
+
+.contato-container{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    box-sizing: border-box;
+}
+
+.contato-card{
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+}
+
+.contato-text{
+    flex: 1;
+    color: rgba(255,255,255,0.95);
+}
+.contato-text h3{
+    font-size: 1.9rem;
+    margin: 0 0 0.5rem 0;
+    color: #61dafb;
+}
+.contato-text p{
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+.contato-form{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.contato-form label{
+    color: rgba(200,230,255,0.9);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.contato-form .form-control{
+    border-radius: 10px;
+    padding: 0.75rem 0.9rem;
+    background: rgba(0,0,0,0.28) !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+.contato-form .form-control::placeholder{color: #9fb7d0}
+
+.btn-custom{
+    padding: 0.6rem 1.1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #2a6fb5, #61dafb);
+    border: none;
+    box-shadow: 0 8px 18px rgba(38,90,145,0.35);
+    color: #021524;
+}
+.btn-custom:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(38,90,145,0.45);
+}
+
+@media (max-width: 900px){
+    .contato-card{flex-direction: column; padding:1.25rem}
+    .contato-text{text-align:center}
+}
+
+
+.contato-form .form-control{width:100%}
+
+
+
+.contato-page main {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    
+    min-height: calc(100vh - 80px) !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    overflow: visible !important; 
+}
+
+
+.contato-page .fundo-form {
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+    overflow: visible !important;
+}
+
+
+.contato-page .fundo-form {
+    min-height: 0 !important;
+    
+    flex: 1 1 auto !important;
+    overflow: visible !important;
 }

@@ -23,28 +23,8 @@ function adicionarAoCarrinho(nome, preco, imagem) {
     atualizarCarrinho();
 }
 
-// Função para remover produto do carrinho
-function removerDoCarrinho(id) {
-    carrinho = carrinho.filter(p => p.id !== id);
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    atualizarCarrinho();
-    renderizarCheckout();
-}
-
-// Função para atualizar quantidade
-function atualizarQuantidade(id, delta) {
-    const produto = carrinho.find(p => p.id === id);
-    if (produto) {
-        produto.quantidade += delta;
-        if (produto.quantidade <= 0) {
-            removerDoCarrinho(id);
-            return;
-        }
-        localStorage.setItem('carrinho', JSON.stringify(carrinho));
-        atualizarCarrinho();
-        renderizarCheckout();
-    }
-}
+// Funções utilitárias de carrinho importadas de cart-utils.js
+import { removerDoCarrinho, atualizarQuantidade } from './cart-utils.js';
 
 // Função para atualizar o carrinho (pode ser usada para atualizar contador, etc.)
 function atualizarCarrinho() {

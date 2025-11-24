@@ -172,7 +172,7 @@ function finalizarCompra() {
         return;
     }
     
-    if (formaPagamento === 'Forma de pagamento' || !formaPagamento) {
+    if (!formaPagamento) {
         alert('Por favor, selecione uma forma de pagamento.');
         return;
     }

@@ -167,7 +167,7 @@ function finalizarCompra() {
     const cep = document.getElementById('cep').value;
     const formaPagamento = document.getElementById('forma-pagamento').value;
     
-    if (!cep || cep.length < 8) {
+    if (!cep || !/^\d{5}-?\d{3}$/.test(cep)) {
         alert('Por favor, informe um CEP válido.');
         return;
     }

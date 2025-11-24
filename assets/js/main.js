@@ -4,7 +4,7 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 // Função para adicionar produto ao carrinho
 function adicionarAoCarrinho(nome, preco, imagem) {
     const produto = {
-        id: Date.now(),
+        id: crypto.randomUUID(),
         nome: nome,
         preco: parseFloat(preco),
         imagem: imagem || 'assets/images/peixe-1.png',

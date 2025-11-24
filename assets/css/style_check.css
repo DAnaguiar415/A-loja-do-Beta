@@ -88,9 +88,6 @@ body {
     padding-bottom: 120px; /* Espaço para o footer fixo */
 }
 
-main {
-    background: linear-gradient(to top, #040f1a 100%, #011523 0%);
-}
 
 /* Mensagem quando carrinho vazio */
 .mensagem-vazia-container {

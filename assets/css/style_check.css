@@ -137,21 +137,7 @@ body {
     object-fit: cover;
 }
 
-/* Footer fixo */
-.footer-fixo {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #021524;
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    border-top: 2px solid rgba(255, 255, 255, 0.2);
-    z-index: 1000;
-}
+/* Footer fixo: duplicate rule removed; consolidated into a single definition above */
 
 .footer-content {
     display: flex;
